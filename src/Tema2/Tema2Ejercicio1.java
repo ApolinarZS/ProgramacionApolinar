@@ -3,7 +3,7 @@ package Tema2;
 import java.util.Scanner;
 
 public class Tema2Ejercicio1 {
-    public static void main (String[] args){
+    public static void main (String[]args){
 
         //Le pido el valor del lado de cuadrado al usuario y creo la variable"\\
         Scanner scanner = new Scanner(System.in);
