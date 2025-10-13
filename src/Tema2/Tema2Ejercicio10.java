@@ -15,7 +15,7 @@ public class Tema2Ejercicio10 {
         double num3 = numeros.nextDouble();
 
         //Vemos si están ordenados de menor a mayor y se lo decimos al usuario\\
-        if (num1<num2 || num2<num3){
+        if (num1 < num2 && num2 < num3){
             System.out.println("Los números introducidos están ordenados de menor a mayor");
         } else System.out.println("Los números introducidos no están ordenados de menor a mayor");
 

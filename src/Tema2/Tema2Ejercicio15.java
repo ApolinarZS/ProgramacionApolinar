@@ -22,7 +22,7 @@ public class Tema2Ejercicio15 {
         boolean bisiesto = ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0;
         int dias;
 
-        if (mes == 2 && bisiesto) {
+        if (mes == 2 && bisiesto) {//alguna operación más
             dias = 29;
         } else if (mes == 2)
             dias = 28;

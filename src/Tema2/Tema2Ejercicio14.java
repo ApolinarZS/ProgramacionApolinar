@@ -19,7 +19,6 @@ public class Tema2Ejercicio14 {
 
         //Calculamos el precio estándar y rebajado\\
         if (persona >= 5 && dias >= 7){
-            dias--;
             double precioO = tarifa*dias*persona*0.75;
             //Mostramos el precio del total\\
             System.out.println("El precio total de la estancia es " +precioO+ ".");
