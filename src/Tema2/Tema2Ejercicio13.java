@@ -11,7 +11,7 @@ public class Tema2Ejercicio13 {
         System.out.println("Introduce la hora (0-23): ");
         int horas = scanner.nextInt();
 
-        while (horas < 0 || horas > 24){
+        while (horas < 0 || horas > 23){
             System.out.println("Introduce una hora válida");
             horas = scanner.nextInt();
         }
@@ -19,7 +19,7 @@ public class Tema2Ejercicio13 {
         System.out.println("Introduce los minutos (0-59): ");
         int minutos = scanner.nextInt();
 
-        while (minutos < 0 || minutos > 60){
+        while (minutos < 0 || minutos > 59){
             System.out.println("Introduce un minuto válido");
             minutos = scanner.nextInt();
         }
@@ -27,7 +27,7 @@ public class Tema2Ejercicio13 {
         System.out.println("Introduce los segundos (0-59): ");
         int segundos = scanner.nextInt();
 
-        while (segundos < 0 || segundos > 60){
+        while (segundos < 0 || segundos > 59){
             System.out.println("Introduce un segundo válido");
             segundos = scanner.nextInt();
         }
