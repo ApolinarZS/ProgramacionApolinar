@@ -13,7 +13,7 @@ public class Tema3Ejercicio1 {
         //almaceno el resultado de la función
         int resultado = numberSign(num);
 
-        //Compruebo si es 0, positivo o negativo y se lo digo al usuario
+        //Compruebo si es 0, positivo o negativo y se lo comunico al usuario
         if (resultado == 0){
             System.out.println("El número introducido es "+resultado+".");
         }
