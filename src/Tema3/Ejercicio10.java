@@ -12,20 +12,7 @@ public class Ejercicio10 {
 
         boolean menu = true; //determinará si el programa se repite o no
         do{
-            System.out.println("""
-                    ---------MENÚ---------ª
-                    a) Calcular el perímetro y el área de un circulo
-                    b) Calcular el perímetro y el área de un cuadrado
-                    c) Calcula el área y perímetro de un rectángulo
-                    d) Comprobar si un número entero es o no primo
-                    e) Comprobar cuantas cifras tiene un número entero
-                    f) Comprobar cuantas cifras PARES tiene un número entero
-                    g) Comprobar cuantas cifras IMPARES tiene un número entero
-                    h) Calcular el factorial de un número entero
-                    i) Calcular el factorial de un número de manera recursiva
-                    j) Calcular cuantas soluciones tiene una ecuación de segundo grado
-                    k) Calcular la suma de las cifras de un número entero
-                    l) SALIR""");
+            menu();
 
             char option = scanner.next().charAt(0);//Leemos por consola la opción que elige el usuario
 
@@ -120,7 +107,13 @@ public class Ejercicio10 {
                     System.out.println("c:");
                     int c = scanner.nextInt();
 
-                    ecuacion(a, b, c);
+                    int resultado = ecuacion(a, b, c);
+                    if (resultado == 1){
+                        System.out.println("La ecuación tiene una solución");
+                    } else if (resultado == 2){
+                        System.out.println("La ecuación tiene dos soluciones");
+                    } else System.out.println("No hay solución real");
+
                 }
                 case 'k'->{
                     System.out.println("Introduce un número entero y te diré la suma de sus cifras.");
