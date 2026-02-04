@@ -96,7 +96,7 @@ public class Hero {
     }
 
     public void drinkPotion() {
-        System.out.println("¡" + name + " usa una poción!");
+        System.out.println("¡" + this.name + " usa una poción!");
         this.health = Math.min(this.health + potion_health, this.maxHealth);
         System.out.println("Vida actual: " + this.health);
     }
@@ -140,7 +140,7 @@ public class Hero {
     public void levelUp() {
         this.level++;
         this.maxHealth += level_up_health_bonus;
-        this.health = this.maxHealth; // Curar al subir de nivel es buena práctica
+        this.health = this.maxHealth; // Curar al subir de nivel es
         this.attack += level_up_stat_bonus;
         this.defense += level_up_stat_bonus;
         System.out.println("¡SUBIDA DE NIVEL! " + name + " ahora es nivel " + level);

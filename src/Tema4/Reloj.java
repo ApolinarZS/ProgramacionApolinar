@@ -70,6 +70,7 @@ public class Reloj {
 
         String formato;
         if (!modo && hora <= 12){
+            this.hora= this.hora-12;
             formato = "(12 horas)";
         } else {
             formato = "(24 horas)";

@@ -4,6 +4,11 @@ public class Cuenta {
     private String numeroCuenta;
     private double saldo;
 
+    public Cuenta(){
+        this.numeroCuenta = "";
+        this.saldo = 0;
+    }
+
     public Cuenta(String numeroCuenta, double saldo) {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
@@ -12,6 +17,12 @@ public class Cuenta {
     // Consultar saldo disponible
     public double getSaldo() {
         return saldo;
+    }
+
+    //setter saldo
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     // Recibir abonos
@@ -26,5 +37,10 @@ public class Cuenta {
 
     public String getNumeroCuenta() {
         return numeroCuenta;
+    }
+
+    @Override
+    public String toString() {
+        return "IBAN: "+this.numeroCuenta+"SALDO: "+this.saldo+".";
     }
 }

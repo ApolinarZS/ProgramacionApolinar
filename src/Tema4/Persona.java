@@ -7,7 +7,7 @@ public class Persona {
     private String nombre;
     private String apellidos;
     private int edad;
-    private static final int adultAge = 18;
+    private static final int ADULTAGE = 18;
     private static final int retiredAge = 65;
 
     public Persona(){
@@ -63,7 +63,7 @@ public class Persona {
 
     public static void isAdult(int edad){
 
-        if (edad >= adultAge){
+        if (edad >= ADULTAGE){
             System.out.println("Eres mayor de edad!");
         } else System.out.println("Eres menor de edad...");
 

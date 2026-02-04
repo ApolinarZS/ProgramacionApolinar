@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PruebaCuentas {
+
     // Almacenamos objetos de tipo BancoPersona
     private static ArrayList<BancoPersona> clientes = new ArrayList<>();
-    private static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         int opcion;
@@ -55,7 +56,7 @@ public class PruebaCuentas {
             String num = sc.nextLine();
             System.out.print("Saldo inicial: ");
             double saldo = sc.nextDouble();
-            if (p.añadirCuenta(new Cuenta(num, saldo))) {
+            if (p.anadirCuenta(new Cuenta(num, saldo))) {
                 System.out.println("Cuenta vinculada correctamente.");
             } else {
                 System.out.println("Límite de 3 cuentas alcanzado.");
@@ -66,6 +67,7 @@ public class PruebaCuentas {
     private static void consultarDatos() {
         BancoPersona p = buscarPorDni();
         if (p != null) {
+            System.out.println(p);
             System.out.println("Cliente DNI: " + p.getDni());
             for (Cuenta c : p.getCuentas()) {
                 if (c != null) {
@@ -134,7 +136,8 @@ public class PruebaCuentas {
         System.out.println("CLIENTES CON SALDO NEGATIVO:");
         for (BancoPersona p : clientes) {
             if (p.esMorosa()) {
-                System.out.println("- " + p.getDni());
+                System.out.println(p);
+                //System.out.println("- " + p.getDni());
             }
         }
     }
