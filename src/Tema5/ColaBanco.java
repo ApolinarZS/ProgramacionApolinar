@@ -9,7 +9,9 @@ public class ColaBanco {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         int opcion;
+
         do {
             mostrarEstadoCola();
             menu();
@@ -18,7 +20,7 @@ public class ColaBanco {
             sc.nextLine();
 
             switch (opcion) {
-                case 1 -> añadirACola();
+                case 1 -> anadirACola();
                 case 2 -> atenderPrimero();
                 case 3 -> quitarPorPosicion();
                 case 0 -> System.out.println("Cerrando sistema de turnos...");
@@ -48,7 +50,8 @@ public class ColaBanco {
         System.out.println("===============================");
     }
 
-    private static void añadirACola() {
+    private static void anadirACola() {
+        //leemos a las características de la persona que se añade a la cola
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
         System.out.print("Edad: ");
