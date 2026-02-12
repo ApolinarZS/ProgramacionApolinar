@@ -24,11 +24,11 @@ public class Ejercicio7 {
                 System.out.println("¡Gato añadido correctamente!");
 
             } catch (NumberFormatException e) {
-                System.out.println("Error: La edad debe ser un número entero.");
+                System.err.println("Error: La edad debe ser un número entero.");
                 e.printStackTrace();
             } catch (Exception e) {
                 // Captura las excepciones lanzadas por la clase Gato
-                System.out.println("Error: " + e.getMessage());
+                System.err.println("Error: " + e.getMessage());
                 e.printStackTrace(); //
             }
         }
