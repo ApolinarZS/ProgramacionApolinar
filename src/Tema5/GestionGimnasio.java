@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class GestionGimnasio {
 
-    private static Map<String, Usuario> gimnasio = new HashMap<>();
-    private static Scanner sc = new Scanner(System.in);
+
 
     public static void main(String[] args) {
-
+          Map<String, Usuario> gimnasio = new HashMap<>();
+          Scanner sc = new Scanner(System.in);
         int opcion;
 
         //bucle para mantenernos dentro del programa mientras lo necesitemos
@@ -21,10 +21,10 @@ public class GestionGimnasio {
 
             //switch para las diferentes opciones del programa
             switch (opcion) {
-                case 1 -> altaUsuario();
-                case 2 -> bajaUsuario();
-                case 3 -> consultarUsuario();
-                case 4 -> modificarUsuario();
+                case 1 -> altaUsuario(sc, gimnasio);
+                case 2 -> bajaUsuario(sc, gimnasio);
+                case 3 -> consultarUsuario(sc, gimnasio);
+                case 4 -> modificarUsuario(sc, gimnasio);
                 case 5 -> System.out.println("Cerrando aplicación...");
                 default -> System.out.println("Error: Opción no válida.");
             }
@@ -43,7 +43,7 @@ public class GestionGimnasio {
     }
 
     //procedimiento para dar de alta a un usuario
-    private static void altaUsuario() {
+    private static void altaUsuario(Scanner sc, Map<String, Usuario> gimnasio) {
         System.out.print("Introduce DNI: ");
         String dni = sc.nextLine();
 
@@ -60,7 +60,7 @@ public class GestionGimnasio {
     }
 
     //procedimiento para dar de baja a un usuario
-    private static void bajaUsuario() {
+    private static void bajaUsuario(Scanner sc, Map<String, Usuario> gimnasio) {
         System.out.print("DNI del usuario a eliminar: ");
         String dni = sc.nextLine();
 
@@ -72,7 +72,7 @@ public class GestionGimnasio {
     }
 
     //procedimiento para mostrar la información de un usuario en concreto vía DNI
-    private static void consultarUsuario() {
+    private static void consultarUsuario(Scanner sc, Map<String, Usuario> gimnasio) {
         System.out.print("Introduce DNI a consultar: ");
         String dni = sc.nextLine();
 
@@ -85,7 +85,7 @@ public class GestionGimnasio {
     }
 
     //función para modificar la información de un usuario vía DNI
-    private static void modificarUsuario() {
+    private static void modificarUsuario(Scanner sc, Map<String, Usuario> gimnasio) {
         System.out.print("Introduce DNI del usuario a modificar: ");
         String dni = sc.nextLine();
 

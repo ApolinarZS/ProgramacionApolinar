@@ -19,47 +19,19 @@ public class Compra2 {
         System.out.println("--- GESTOR DE COMPRA ---");
 
         do {
-            System.out.println("\n1. Añadir a la LISTA (planear)");
-            System.out.println("2. Meter producto al CARRO (comprar)");
-            System.out.println("3. Ver estado (¿Qué falta?)");
-            System.out.println("0. Salir");
-            System.out.print("Seleccione opción: ");
+            menu();
             opcion = sc.nextInt();
             sc.nextLine();
 
             switch (opcion) {
                 case 1 -> {
-                    System.out.print("Producto para la lista: ");
-                    String p = sc.nextLine().trim().toLowerCase();
-                    if (!lista.add(p)) System.out.println("Ya estaba en la lista.");
-                    else System.out.println("Añadido a la lista.");
+                    anadirLista(sc, lista);
                 }
                 case 2 -> {
-                    System.out.print("Producto que echas al carro: ");
-                    String p = sc.nextLine().trim().toLowerCase();
-                    if (carro.add(p)) System.out.println("Metido en el carro.");
-                    else System.out.println("Ya estaba en el carro.");
+                    meterCarro(sc, carro);
                 }
                 case 3 -> {
-                    System.out.println("\n--- ESTADO ACTUAL ---");
-                    System.out.println("En el carro tienes: " + carro);
-
-                    // Calculamos qué falta usando una copia para no borrar la lista original
-                    Set<String> falta = new HashSet<>(lista);
-                    falta.removeAll(carro); // Operación de Diferencia
-
-                    if (falta.isEmpty()) {
-                        System.out.println("¡Genial! No te falta nada de tu lista.");
-                    } else {
-                        System.out.println("Te falta por añadir: " + falta);
-                    }
-
-                    // Extra: Productos en el carro que NO estaban en la lista (Caprichos)
-                    Set<String> caprichos = new HashSet<>(carro);
-                    caprichos.removeAll(lista);
-                    if (!caprichos.isEmpty()) {
-                        System.out.println("Llevas caprichos que no planeaste: " + caprichos);
-                    }
+                    estado(lista, carro);
                 }
                 case 0 -> System.out.println("Saliendo...");
                 default -> System.out.println("Opción no válida.");
@@ -67,6 +39,42 @@ public class Compra2 {
 
         } while (opcion != 0);
 
+
+
         sc.close();
     }
+    private static void menu(){
+        System.out.println("\n1. Añadir a la LISTA (planear)");
+        System.out.println("2. Meter producto al CARRO (comprar)");
+        System.out.println("3. Ver estado (¿Qué falta?)");
+        System.out.println("0. Salir");
+        System.out.print("Seleccione opción: ");
+    }
+    private static void anadirLista(Scanner sc, Set<String> lista){
+        System.out.print("Producto para la lista: ");
+        String p = sc.nextLine().trim().toLowerCase();
+        if (!lista.add(p)) System.out.println("Ya estaba en la lista.");
+        else System.out.println("Añadido a la lista.");
+    }
+    private static void meterCarro(Scanner sc, Set<String> carro){
+        System.out.print("Producto que echas al carro: ");
+        String p = sc.nextLine().trim().toLowerCase();
+        if (carro.add(p)) System.out.println("Metido en el carro.");
+        else System.out.println("Ya estaba en el carro.");
+    }
+    private static void estado(Set<String> lista, Set<String> carro){
+        System.out.println("\n--- ESTADO ACTUAL ---");
+        System.out.println("En el carro tienes: " + carro);
+
+        // Calculamos qué falta usando una copia para no borrar la lista original
+        Set<String> falta = new HashSet<>(lista);
+        falta.removeAll(carro); // Operación de Diferencia
+
+        if (falta.isEmpty()) {
+            System.out.println("¡Genial! No te falta nada de tu lista.");
+        } else {
+            System.out.println("Te falta por añadir: " + falta);
+        }
+    }
+
 }

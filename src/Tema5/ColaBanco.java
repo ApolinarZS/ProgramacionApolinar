@@ -4,25 +4,25 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ColaBanco {
-    // Usamos LinkedList porque permite acceso por índice y comportamiento de cola
-    private static LinkedList<UsuarioCola> cola = new LinkedList<>();
-    private static Scanner sc = new Scanner(System.in);
+
 
     public static void main(String[] args) {
-
+        // Usamos LinkedList porque permite acceso por índice y comportamiento de cola
+         LinkedList<UsuarioCola> cola = new LinkedList<>();
+         Scanner sc = new Scanner(System.in);
         int opcion;
 
         do {
-            mostrarEstadoCola();
+            mostrarEstadoCola(cola);
             menu();
 
             opcion = sc.nextInt();
             sc.nextLine();
 
             switch (opcion) {
-                case 1 -> anadirACola();
-                case 2 -> atenderPrimero();
-                case 3 -> quitarPorPosicion();
+                case 1 -> anadirACola(sc, cola);
+                case 2 -> atenderPrimero(cola);
+                case 3 -> quitarPorPosicion(sc, cola);
                 case 0 -> System.out.println("Cerrando sistema de turnos...");
                 default -> System.out.println("Error: Opción no válida.");
             }
@@ -38,7 +38,7 @@ public class ColaBanco {
         System.out.print("Seleccione opción: ");
     }
 
-    private static void mostrarEstadoCola() {
+    private static void mostrarEstadoCola(LinkedList<UsuarioCola> cola) {
         System.out.println("\n========= COLA ACTUAL =========");
         if (cola.isEmpty()) {
             System.out.println("La cola está vacía.");
@@ -50,7 +50,7 @@ public class ColaBanco {
         System.out.println("===============================");
     }
 
-    private static void anadirACola() {
+    private static void anadirACola(Scanner sc, LinkedList<UsuarioCola> cola) {
         //leemos a las características de la persona que se añade a la cola
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -65,7 +65,7 @@ public class ColaBanco {
         System.out.println("Cliente " + nombre + " ha tomado turno al final de la cola.");
     }
 
-    private static void atenderPrimero() {
+    private static void atenderPrimero(LinkedList<UsuarioCola> cola) {
         if (!cola.isEmpty()) {
             // pollFirst() quita y devuelve el primer elemento
             UsuarioCola atendido = cola.pollFirst();
@@ -75,10 +75,9 @@ public class ColaBanco {
         }
     }
 
-    private static void quitarPorPosicion() {
+    private static void quitarPorPosicion(Scanner sc, LinkedList<UsuarioCola> cola) {
         if (cola.isEmpty()) {
             System.out.println("La cola está vacía.");
-            return;
         }
 
         System.out.print("Introduce el número de posición que abandona (1-" + cola.size() + "): ");

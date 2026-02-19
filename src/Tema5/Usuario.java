@@ -20,11 +20,10 @@ public class Usuario {
     public int getEdad() {return edad;}
     public void setEdad(int edad) {
         //Controlamos la edad que es posible registrar
-        while (edad > 100 || edad < 16){
-            System.out.println("No pueden matricularse en el gimnasio los usuarios que tengan más de 100 años o sean menores de 16");
+        if (edad > 100 || edad < 16){
+            System.err.println("No pueden matricularse en el gimnasio los usuarios que tengan más de 100 años o sean menores de 16");
 
         }
-        this.edad = edad;
     }
     //Nombre
     public String getNombre() {return nombre;}
