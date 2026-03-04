@@ -1,4 +1,4 @@
-package Ejercicio3;
+package Examen2avaApolinarZaera.src.Ejercicio3;
 
 class Pocion extends Articulo{
     private int nivel;
@@ -11,7 +11,7 @@ class Pocion extends Articulo{
 
     @Override
     public void Tipo() {
-        System.out.println("Es una poción de nivel "+this.nivel+"");
+        System.out.println("Es una poción de nivel "+this.nivel+".");
 
     }
 

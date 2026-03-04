@@ -1,4 +1,4 @@
-package Ejercicio2;
+package Examen2avaApolinarZaera.src.Ejercicio2;
 
 import java.util.ArrayList;
 

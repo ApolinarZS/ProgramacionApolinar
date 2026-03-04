@@ -1,4 +1,4 @@
-package Ejercicio3;
+package Examen2avaApolinarZaera.src.Ejercicio3;
 
 public abstract class Articulo {
 
