@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Examen2avaApolinarZaera.src.Ejercicio1;
 
 public class Libro {
     private String isbn;

@@ -1,6 +1,5 @@
-package Ejercicio1;
+package Examen2avaApolinarZaera.src.Ejercicio1;
 
-import Ejercicio3.Articulo;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
